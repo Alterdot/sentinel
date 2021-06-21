@@ -1,9 +1,9 @@
 #!/bin/bash
 set -evx
 
-mkdir ~/.dashcore
+mkdir ~/.alterdot
 
 # safety check
-if [ ! -f ~/.dashcore/.dash.conf ]; then
-  cp share/dash.conf.example ~/.dashcore/dash.conf
+if [ ! -f ~/.alterdot/.alterdot.conf ]; then
+  cp share/alterdot.conf.example ~/.alterdot/alterdot.conf
 fi

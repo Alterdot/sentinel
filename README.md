@@ -1,10 +1,10 @@
-# Dash Sentinel
+# Alterdot Sentinel
 
-[![Build Status](https://travis-ci.org/dashpay/sentinel.svg?branch=master)](https://travis-ci.org/dashpay/sentinel)
+[![Build Status](https://travis-ci.org/alterdot/sentinel.svg?branch=master)](https://travis-ci.com/alterdot/sentinel)
 
-> An automated governance helper for Dash Masternodes.
+> An automated governance helper for Alterdot Masternodes.
 
-Sentinel is an autonomous agent for persisting, processing and automating Dash governance objects and tasks. It is a Python application which runs alongside the DashCore instance on each Dash Masternode.
+Sentinel is an autonomous agent for persisting, processing and automating Alterdot governance objects and tasks. It is a Python application which runs alongside the Alterdot instance on each Alterdot Masternode.
 
 ## Table of Contents
 - [Install](#install)
@@ -16,9 +16,32 @@ Sentinel is an autonomous agent for persisting, processing and automating Dash g
 - [Contributing](#contributing)
 - [License](#license)
 
-## Install
+## Install Ubuntu 18.04 / 20.04
 
-These instructions cover installing Sentinel on Ubuntu 16.04 / 18.04.
+### Dependencies
+
+Make sure Python version 3.6.x or above is installed:
+
+    python --version
+
+Update system packages and ensure virtualenv is installed:
+
+    $ sudo apt-get update
+    $ sudo apt-get -y install git python3 virtualenv
+
+Make sure the local Alterdot daemon running is at least version v1.8.0 (1080000)
+
+    $ alterdot-cli getinfo | grep version
+
+### Install Sentinel
+
+Clone the Sentinel repo and install Python dependencies.
+
+    $ git clone https://github.com/alterdot/sentinel.git && cd sentinel
+    $ virtualenv -p $(which python3) ./venv
+    $ ./venv/bin/pip install -r requirements.txt
+
+## Install Ubuntu 16.04 / 18.04
 
 ### Dependencies
 
@@ -29,17 +52,17 @@ Make sure Python version 2.7.x or above is installed:
 Update system packages and ensure virtualenv is installed:
 
     $ sudo apt-get update
-    $ sudo apt-get -y install python-virtualenv
+    $ sudo apt-get -y install git python-virtualenv
 
-Make sure the local DashCore daemon running is at least version 12.1 (120100)
+Make sure the local Alterdot daemon running is at least version v1.8.0 (1080000)
 
-    $ dash-cli getinfo | grep version
+    $ alterdot-cli getinfo | grep version
 
 ### Install Sentinel
 
 Clone the Sentinel repo and install Python dependencies.
 
-    $ git clone https://github.com/dashpay/sentinel.git && cd sentinel
+    $ git clone https://github.com/alterdot/sentinel.git && cd sentinel
     $ virtualenv ./venv
     $ ./venv/bin/pip install -r requirements.txt
 
@@ -63,13 +86,13 @@ Test the config by running tests:
 
     $ ./venv/bin/py.test ./test
 
-With all tests passing and crontab setup, Sentinel will stay in sync with dashd and the installation is complete
+With all tests passing and crontab setup, Sentinel will stay in sync with alterdotd and the installation is complete
 
 ## Configuration
 
-An alternative (non-default) path to the `dash.conf` file can be specified in `sentinel.conf`:
+An alternative (non-default) path to the `alterdot.conf` file can be specified in `sentinel.conf`:
 
-    dash_conf=/path/to/dash.conf
+    alterdot_conf=/path/to/alterdot.conf
 
 ## Troubleshooting
 
@@ -83,11 +106,11 @@ To view debug output, set the `SENTINEL_DEBUG` environment variable to anything 
 
 ## Contributing
 
-Please follow the [DashCore guidelines for contributing](https://github.com/dashpay/dash/blob/master/CONTRIBUTING.md).
+Please follow the [Alterdot guidelines for contributing](https://github.com/alterdot/alterdot/blob/master/CONTRIBUTING.md).
 
 Specifically:
 
-* [Contributor Workflow](https://github.com/dashpay/dash/blob/master/CONTRIBUTING.md#contributor-workflow)
+* [Contributor Workflow](https://github.com/alterdot/alterdot/blob/master/CONTRIBUTING.md#contributor-workflow)
 
     To contribute a patch, the workflow is as follows:
 
@@ -101,4 +124,4 @@ Specifically:
 
 ## License
 
-Released under the MIT license, under the same terms as DashCore itself. See [LICENSE](LICENSE) for more info.
+Released under the MIT license, under the same terms as Alterdot itself. See [LICENSE](LICENSE) for more info.
