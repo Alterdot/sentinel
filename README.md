@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/alterdot/sentinel.svg?branch=master)](https://travis-ci.com/alterdot/sentinel)
 
-> An automated governance helper for Alterdot Masternodes.
+> An automated helper for Alterdot Masternodes.
 
-Sentinel is an autonomous agent for persisting, processing and automating Alterdot governance objects and tasks. It is a Python application which runs alongside the Alterdot instance on each Alterdot Masternode.
+The Alterdot Sentinel is a Python application which runs alongside the Alterdot instance on each Alterdot Masternode.
 
 ## Table of Contents
 - [Install](#install)
