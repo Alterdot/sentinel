@@ -1,6 +1,6 @@
 # Alterdot Sentinel
 
-[![Build Status](https://travis-ci.org/alterdot/sentinel.svg?branch=master)](https://travis-ci.com/alterdot/sentinel)
+[![Build Status](https://travis-ci.com/alterdot/sentinel.svg?branch=master)](https://travis-ci.com/alterdot/sentinel)
 
 > An automated helper for Alterdot Masternodes.
 
@@ -99,10 +99,6 @@ An alternative (non-default) path to the `alterdot.conf` file can be specified i
 To view debug output, set the `SENTINEL_DEBUG` environment variable to anything non-zero, then run the script manually:
 
     $ SENTINEL_DEBUG=1 ./venv/bin/python bin/sentinel.py
-
-## Maintainer
-
-[@nmarley](https://github.com/nmarley)
 
 ## Contributing
 
