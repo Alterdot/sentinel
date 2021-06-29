@@ -16,7 +16,7 @@ def test_alterdotd():
     config_text = AlterdotConfig.slurp_config_file(config.alterdot_conf)
     network = 'mainnet'
     is_testnet = False
-    genesis_hash = u'00000ffd590b1485b3caadc19b22e6379c733355108f107a430458cdf3407ab6'
+    genesis_hash = u'0000dea5d2c92cf3f1dce5031cc2b368b2a5e3ebea73ea1278fef673d10b1345'
     for line in config_text.split("\n"):
         if line.startswith('testnet=1'):
             network = 'testnet'
