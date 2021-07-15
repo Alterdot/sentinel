@@ -212,3 +212,6 @@ class AlterdotDaemon():
                 raise e
 
         return epoch
+
+    def worker_call(self):
+        self.rpc_command('sentinelcall', config.sentinel_version)

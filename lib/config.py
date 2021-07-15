@@ -10,7 +10,7 @@ default_sentinel_config = os.path.normpath(
 )
 sentinel_config_file = os.environ.get('SENTINEL_CONFIG', default_sentinel_config)
 sentinel_cfg = AlterdotConfig.tokenize(sentinel_config_file)
-sentinel_version = "1.4.0"
+sentinel_version = "1.4.2"
 
 
 def get_alterdot_conf():

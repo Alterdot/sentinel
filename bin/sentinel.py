@@ -29,6 +29,13 @@ def prune_expired_proposals(alterdotd):
     for proposal in Proposal.expired(alterdotd.superblockcycle()):
         proposal.vote(alterdotd, VoteSignals.delete, VoteOutcomes.yes)
 
+# worker call alterdotd
+def sentinel_call(alterdotd):
+    printdbg("initiating sentinel_call")
+
+    alterdotd.worker_call()
+
+    printdbg("finished sentinel_call")
 
 def attempt_superblock_creation(alterdotd):
     import alterdotlib
@@ -164,6 +171,9 @@ def main():
     #
     # load "gobject list" rpc command data, sync objects into internal database
     perform_alterdotd_object_sync(alterdotd)
+
+    # call alterdotd for work
+    sentinel_call(alterdotd)
 
     # auto vote network objects as valid/invalid
     # check_object_validity(alterdotd)
