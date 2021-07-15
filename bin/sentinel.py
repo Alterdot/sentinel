@@ -29,6 +29,7 @@ def prune_expired_proposals(alterdotd):
     for proposal in Proposal.expired(alterdotd.superblockcycle()):
         proposal.vote(alterdotd, VoteSignals.delete, VoteOutcomes.yes)
 
+
 # worker call alterdotd
 def sentinel_call(alterdotd):
     printdbg("initiating sentinel_call")
@@ -36,6 +37,7 @@ def sentinel_call(alterdotd):
     alterdotd.worker_call()
 
     printdbg("finished sentinel_call")
+
 
 def attempt_superblock_creation(alterdotd):
     import alterdotlib
